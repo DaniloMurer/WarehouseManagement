@@ -31,3 +31,7 @@ build/
 
 ### VS Code ###
 .vscode/
+
+# h2 database file
+/springapplication.mv.db
+/springapplication.trace.db
