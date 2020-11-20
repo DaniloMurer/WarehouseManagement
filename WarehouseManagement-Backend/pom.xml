@@ -9,13 +9,13 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.danilojakob</groupId>
-    <artifactId>application</artifactId>
+    <artifactId>warehousemanagement</artifactId>
     <version>1.0.0</version>
-    <name>Spring Boilerplate</name>
-    <description>Spring Boilerplate Code with Role Based JWT Authentication</description>
+    <name>WarehouseManagement Backend</name>
+    <description>REST API for WarehouseManagement Application</description>
 
     <properties>
-        <java.version>14</java.version>
+        <java.version>11</java.version>
         <auth0-spring-security-api.version>1.1.0</auth0-spring-security-api.version>
         <asciidoctor-maven-plugin.version>1.5.8</asciidoctor-maven-plugin.version>
         <lombok.version>1.18.12</lombok.version>
@@ -27,14 +27,6 @@
             <email>danilo.murer@gmail.com</email>
             <roles>
                 <role>Project Leader</role>
-                <role>Developer</role>
-            </roles>
-        </developer>
-        <developer>
-            <name>Michael Baumberger</name>
-            <email>michael_baumberger@gmx.ch</email>
-            <roles>
-                <role>Bug Fixer</role>
                 <role>Developer</role>
             </roles>
         </developer>
@@ -125,6 +117,24 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>1.4.1.RELEASE</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                        <configuration>
+                            <classifier>spring-boot</classifier>
+                            <mainClass>
+                                com.danilojakob.warehousemanagement.WarehouseManagementApplication
+                            </mainClass>
+                            <layout>
+                                JAR
+                            </layout>
+                            <addResources>true</addResources>
+                        </configuration>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>

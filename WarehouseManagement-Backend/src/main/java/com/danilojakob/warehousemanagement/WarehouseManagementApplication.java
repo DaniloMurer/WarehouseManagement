@@ -10,10 +10,10 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
  * @copyright Danilo Jakob
  */
 @SpringBootApplication
-public class SpringBoilerplateApplication {
+public class WarehouseManagementApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(SpringBoilerplateApplication.class, args);
+        SpringApplication.run(WarehouseManagementApplication.class, args);
     }
 
     @Bean
