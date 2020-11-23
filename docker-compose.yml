@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  warehousemanagement-backend:
+    build:
+      context: ./
+      dockerfile: ./WarehouseManagement-Backend/Dockerfile
+
+    ports:
+      - 80:80
+  warehousemanagement-frontend:
+    build:
+      context: ./
+      dockerfile: ./WarehouseManagement-Frontend/Dockerfile
+    ports:
+      - 4200:4200
+

@@ -2,7 +2,7 @@ FROM openjdk:14
 
 LABEL maintainer="danilo.murer@gmail.com"
 
-EXPOSE 8080
+EXPOSE 80
 
 WORKDIR /app
 
