@@ -6,6 +6,8 @@ import com.danilojakob.warehousemanagement.service.RoleService;
 import com.danilojakob.warehousemanagement.service.UserService;
 import com.danilojakob.warehousemanagement.validator.SignUpValidator;
 import lombok.RequiredArgsConstructor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -28,6 +30,7 @@ public class UserController {
     private final RoleService roleService;
     private final BCryptPasswordEncoder bCryptPasswordEncoder;
     private final SignUpValidator signUpValidator;
+    private final Logger LOGGER = LoggerFactory.getLogger(UserController.class);
 
     @InitBinder("signUpDto")
     public void initChangeCommuneBinder(WebDataBinder binder) {
@@ -48,6 +51,7 @@ public class UserController {
 
         User createdUser = userService.createUserFrom(signUpDto);
         userService.save(createdUser);
+        LOGGER.info("Saved new user to the database", createdUser);
         return ResponseEntity.status(HttpStatus.CREATED).build();
 
     }
