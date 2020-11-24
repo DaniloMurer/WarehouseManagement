@@ -120,9 +120,6 @@
                 <version>1.4.1.RELEASE</version>
                 <executions>
                     <execution>
-                        <goals>
-                            <goal>repackage</goal>
-                        </goals>
                         <configuration>
                             <classifier>spring-boot</classifier>
                             <mainClass>
@@ -131,6 +128,7 @@
                             <layout>
                                 JAR
                             </layout>
+                            <addResources>true</addResources>
                         </configuration>
                     </execution>
                 </executions>
