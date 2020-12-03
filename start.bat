@@ -1,2 +1,1 @@
-cd ./WarehouseManagement/ && mvn package
-cd .. && docker-compose up --build
+cd ./WarehouseManagement-Backend/ & mvn package & cd .. & docker-compose up --build
