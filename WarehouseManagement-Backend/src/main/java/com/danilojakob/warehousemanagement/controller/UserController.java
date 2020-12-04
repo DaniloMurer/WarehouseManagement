@@ -51,7 +51,7 @@ public class UserController {
 
         User createdUser = userService.createUserFrom(signUpDto);
         userService.save(createdUser);
-        LOGGER.info("Saved new user to the database", createdUser);
+        LOGGER.info("Saved new user to the database {}", createdUser);
         return ResponseEntity.status(HttpStatus.CREATED).build();
 
     }

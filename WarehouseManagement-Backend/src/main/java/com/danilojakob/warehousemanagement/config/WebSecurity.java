@@ -38,6 +38,7 @@ public class WebSecurity extends WebSecurityConfigurerAdapter {
                     .antMatchers(HttpMethod.POST, SecurityConstants.SING_UP_URL).permitAll()
                     .antMatchers(HttpMethod.GET, "/").permitAll()
                     .antMatchers("/h2-console/**").permitAll()
+                    .antMatchers(HttpMethod.GET, "/resources/**").permitAll()
                     .anyRequest().authenticated().and()
                 .addFilter(new JwtAuthenticationFilter(authenticationManager()))
                 .addFilter(new JwtAuthorizationFilter(authenticationManager()))

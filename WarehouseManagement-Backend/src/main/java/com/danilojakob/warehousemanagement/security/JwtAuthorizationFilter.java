@@ -2,6 +2,10 @@ package com.danilojakob.warehousemanagement.security;
 
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.algorithms.Algorithm;
+import com.danilojakob.warehousemanagement.service.UserDetailsServiceImpl;
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -19,6 +23,8 @@ import java.util.ArrayList;
  * @copyright Danilo Jakob
  */
 public class JwtAuthorizationFilter extends BasicAuthenticationFilter {
+
+    private UserDetailsServiceImpl userDetailsService;
 
     public JwtAuthorizationFilter(AuthenticationManager authenticationManager) {
         super(authenticationManager);
@@ -38,6 +44,7 @@ public class JwtAuthorizationFilter extends BasicAuthenticationFilter {
                     .verify(token.replace(SecurityConstants.TOKEN_PREFIX, ""))
                     .getSubject();
             if (user != null) {
+
                 return new UsernamePasswordAuthenticationToken(user, null, new ArrayList<>());
             }
             return null;
