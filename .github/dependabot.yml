@@ -1,0 +1,25 @@
+version: 2
+updates:
+- package-ecosystem: maven
+  directory: "/WarehouseManagement-Backend"
+  schedule:
+    interval: daily
+    time: "04:00"
+  open-pull-requests-limit: 10
+  ignore:
+  - dependency-name: org.springframework.boot:spring-boot-maven-plugin
+    versions:
+    - 2.4.2
+    - 2.4.3
+    - 2.4.4
+  - dependency-name: org.springframework.boot:spring-boot-starter-parent
+    versions:
+    - 2.4.2
+    - 2.4.3
+    - 2.4.4
+  - dependency-name: org.projectlombok:lombok
+    versions:
+    - 1.18.18
+  - dependency-name: com.auth0:auth0-spring-security-api
+    versions:
+    - 1.4.0
