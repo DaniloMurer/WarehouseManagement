@@ -17,7 +17,7 @@
     <properties>
         <java.version>14</java.version>
         <auth0-spring-security-api.version>1.1.0</auth0-spring-security-api.version>
-        <asciidoctor-maven-plugin.version>1.5.8</asciidoctor-maven-plugin.version>
+        <asciidoctor-maven-plugin.version>2.2.0</asciidoctor-maven-plugin.version>
         <lombok.version>1.18.12</lombok.version>
     </properties>
 
